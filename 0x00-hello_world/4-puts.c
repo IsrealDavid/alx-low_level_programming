@@ -1,4 +1,4 @@
-#!/bin/bash
+
 #includ <stuio.h>
 int main (void)
 {
