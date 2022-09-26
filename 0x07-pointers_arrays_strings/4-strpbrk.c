@@ -1,18 +1,26 @@
-#include "main.h"
-#include <stdio.h>
-
 /**
- * main - check the code
+ * _strpbrk - Returns pointer to first occurence of any of accept
+ * in the string s
  *
- * Return: Always 0.
+ * @s: string to search
+ * @accept: characters to look for
+ *
+ * Return: pointer to first occurrence of accept in s
  */
-int main(void)
+char *_strpbrk(char *s, char *accept)
 {
-    char *s = "hello, world";
-    char *f = "world";
-    char *t;
+	char *ptr = accept;
 
-    t = _strpbrk(s, f);
-    printf("%s\n", t);
-    return (0);
+	while (*s != 0)
+	{
+		if (*s == *ptr && *ptr != 0)
+			return (s);
+		ptr++;
+		if (*ptr == 0)
+		{
+			ptr = accept;
+			s++;
+		}
+	}
+	return (0);
 }
