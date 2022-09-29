@@ -1,9 +1,4 @@
-/*
- * File: 2-strlen_recursion.c
- * Auth: Brennan D Baraban
- */
-
-#include "holberton.h"
+#include "main.h"
 
 /**
  * _strlen_recursion - Returns the length of a string.
