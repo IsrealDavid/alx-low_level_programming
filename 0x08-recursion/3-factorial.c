@@ -1,22 +1,23 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#include "main.h"
 
 /**
- * File: holberton.h
- * Auth: Brennan D Baraban
- * Desc: Header file containing prototypes for all functions
- *       used in the 0x07-recursion directory.
+ * factorial - Returns the factorial of a given number.
+ * @n: The number to find the factorial of.
+ *
+ * Return: If n > 0 - the factorial of n.
+ *         If n < 0 - 1 to indicate an error.
  */
+int factorial(int n)
+{
+	int result = n;
 
-int _putchar(char c);
-void _puts_recursion(char *s);
-void _print_rev_recursion(char *s);
-int _strlen_recursion(char *s);
-int factorial(int n);
-int _pow_recursion(int x, int y);
-int _sqrt_recursion(int n);
-int is_prime_number(int n);
-int is_palindrome(char *s);
-int wildcmp(char *s1, char *s2);
+	if (n < 0)
+		return (-1);
 
-#endif
+	else if (n >= 0 && n <= 1)
+		return (1);
+
+	result *= factorial(n - 1);
+
+	return (result);
+}
